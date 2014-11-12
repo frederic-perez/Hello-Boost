@@ -11,8 +11,8 @@ else()
 	set(Boost_USE_STATIC_LIBS OFF)
 endif()
 set(Boost_USE_MULTITHREADED ON)
-find_package(Boost)
-# find_package(Boost COMPONENTS system filesystem) TODO: Add (built) components
+# find_package(Boost) # <-- Use this simple line for using only headers
+find_package(Boost COMPONENTS system filesystem)
 if(Boost_FOUND)
 	include_directories(${Boost_INCLUDE_DIRS})
 	message(STATUS "Boost found:")
