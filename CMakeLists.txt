@@ -14,9 +14,10 @@ set(Boost_USE_MULTITHREADED ON)
 find_package(Boost)
 # find_package(Boost COMPONENTS system filesystem) TODO: Add (built) components
 if(Boost_FOUND)
-	message(STATUS "Target dependencies: ${Boost_LIBRARIES}")
 	include_directories(${Boost_INCLUDE_DIRS})
-	message(STATUS "Boost lib found: ${Boost_LIBRARIES}")
+	message(STATUS "Boost found:")
+	message(STATUS "  Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+	message(STATUS "  Boost_LIBRARIES: ${Boost_LIBRARIES}") # Used below
 else()
 	message(FATAL_ERROR "Boost lib not found!")
 endif()
