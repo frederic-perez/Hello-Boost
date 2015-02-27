@@ -12,15 +12,12 @@ else()
 endif()
 set(Boost_USE_MULTITHREADED ON)
 # find_package(Boost) # <-- Use this simple line for using only headers
-find_package(Boost COMPONENTS system filesystem)
-if(Boost_FOUND)
-	include_directories(${Boost_INCLUDE_DIRS})
-	message(STATUS "Boost found:")
-	message(STATUS "  Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
-	message(STATUS "  Boost_LIBRARIES: ${Boost_LIBRARIES}") # Used below
-else()
-	message(FATAL_ERROR "Boost lib not found!")
-endif()
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+message(STATUS "Boost found:")
+message(STATUS "  Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+message(STATUS "  Boost_LIBRARIES: ${Boost_LIBRARIES}") # Used below
+
 
 set(SRC_LIST
 	main.cpp
