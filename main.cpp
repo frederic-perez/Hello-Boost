@@ -4,6 +4,9 @@
 
 #define BOOST_LIB_DIAGNOSTIC
 
+#undef TESTFILESYSTEM
+#ifdef TESTFILESYSTEM
+
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/system/config.hpp>
@@ -43,7 +46,10 @@ TestFileSystem(const std::string& a_filename)
 			// to a path by the path stream inserter
 	}
 }
+#endif
 
+#undef TESTLEXICALCAST
+#ifdef TESTLEXICALCAST
 void
 TestLexicalCast()
 {
@@ -53,6 +59,7 @@ TestLexicalCast()
 	const short value = lexical_cast<short>("66");
 	std::cout << "lexical_cast<short>(\"66\") is " << value << std::endl;
 }
+#endif
 
 int
 main(int /*argc*/, char* argv[])
@@ -60,7 +67,13 @@ main(int /*argc*/, char* argv[])
 	std::cout << "Hello, world!" << std::endl;
 	const std::string exeFile = argv[0];
 
+#ifdef TESTFILESYSTEM
 	TestFileSystem(exeFile);
+#endif
+
+#ifdef TESTLEXICALCAST
+	TestLexicalCast()
+#endif
 
 	return EXIT_SUCCESS;
 }
