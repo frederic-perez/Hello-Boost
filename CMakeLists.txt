@@ -25,6 +25,7 @@ endif ()
 
 set(SRC_LIST
 	main.cpp
+	ParsingXML.cpp ParsingXML.h
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

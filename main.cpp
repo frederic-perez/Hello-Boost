@@ -4,6 +4,8 @@
 
 #define BOOST_LIB_DIAGNOSTIC
 
+#include "ParsingXML.h"
+
 #undef TESTFILESYSTEM
 #ifdef TESTFILESYSTEM
 
@@ -75,7 +77,12 @@ main(int /*argc*/, char* argv[])
 	TestLexicalCast()
 #endif
 
-	return EXIT_SUCCESS;
+	const std::string filenameIn = "input.xml";
+	const std::string filenameOut = "output.xml";
+	const int returnCode = ParseXML(filenameIn, filenameOut);
+
+	std::cout << "Exiting with returnCode=" << returnCode << std::endl;
+	return returnCode;
 }
 
 // -- eof
