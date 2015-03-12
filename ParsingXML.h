@@ -79,9 +79,13 @@ public:
 
 #endif
 
+namespace HelloBoost {
+
 bool
 ParseXML(
 	const std::string& a_inputFilename,
 	const std::string& a_outputFilename);
+
+} // namespace HelloBoost
 
 // -- eof

@@ -29,6 +29,8 @@ template<> struct translator_between<std::string, Date> {
 
 #endif
 
+namespace {
+
 Sked
 read(std::istream& is)
 {
@@ -70,9 +72,11 @@ write(Sked sked, std::ostream & os)
 	}
 	write_xml(os, pt);
 }
- 
+
+} // namespace
+
 bool
-ParseXML(
+HelloBoost::ParseXML(
 	const std::string& a_inputFilename,
 	const std::string& a_outputFilename)
 {

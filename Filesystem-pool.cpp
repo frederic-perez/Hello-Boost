@@ -11,7 +11,7 @@
 #include "Filesystem-pool.h"
 
 void
-ExamplesOfFileSystem(const std::string& a_filename)
+HelloBoost::ExamplesOfFileSystem(const std::string& a_filename)
 {
 	std::clog << __func__ << " started..." << std::endl;
 

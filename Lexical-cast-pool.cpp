@@ -8,7 +8,7 @@
 #include "Lexical-cast-pool.h"
 
 void
-ExamplesOfLexicalCast()
+HelloBoost::ExamplesOfLexicalCast(const std::string& a_string)
 {
 	std::clog << __func__ << " started..." << std::endl;
 	
@@ -16,9 +16,25 @@ ExamplesOfLexicalCast()
 	using boost::bad_lexical_cast;
 
 	const std::string pad = "  ";
-	const short value = lexical_cast<short>("66");
-	std::cout << pad << "lexical_cast<short>(\"66\") is " << value << std::endl;
+
+	const int valueIntS = stoi(a_string);
+	std::cout << pad << "stoi(\"" << a_string << "\") is "
+		<< valueIntS << std::endl;
+	const int valueIntL = lexical_cast<int>(a_string);
+	std::cout << pad << "lexical_cast<int>(\"" << a_string << "\") is "
+		<< valueIntL << std::endl;
 	
+	const short valueShortS = stoi(a_string); // Caution: Automatic cast to short
+	std::cout << pad << "stoi(\"" << a_string << "\") is "
+		<< valueShortS << std::endl;
+	try {
+		const short valueShortL = lexical_cast<short>(a_string);
+		std::cout << pad << "lexical_cast<short>(\"" << a_string << "\") is "
+			<< valueShortL << std::endl;
+	} catch (const boost::bad_lexical_cast& e) {
+		std::cerr << pad << "Exception caught: " << e.what() << "\n";
+	}
+
 	std::clog << __func__ << " finished." << std::endl;
 }
 

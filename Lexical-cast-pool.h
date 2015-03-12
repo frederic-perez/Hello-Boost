@@ -1,5 +1,11 @@
 // -- Examples on how to use boost::lexical_cast
 
-void ExamplesOfLexicalCast();
+#include <string>
+
+namespace HelloBoost {
+
+void ExamplesOfLexicalCast(const std::string&);
+
+} // namespace HelloBoost
 
 // -- eof
