@@ -24,7 +24,7 @@ HelloBoost::ExamplesOfLexicalCast(const std::string& a_string)
 	std::cout << pad << "lexical_cast<int>(\"" << a_string << "\") is "
 		<< valueIntL << std::endl;
 	
-	const short valueShortS = stoi(a_string); // Caution: Automatic cast to short
+	const short valueShortS = static_cast<short>(stoi(a_string));
 	std::cout << pad << "stoi(\"" << a_string << "\") is "
 		<< valueShortS << std::endl;
 	try {
