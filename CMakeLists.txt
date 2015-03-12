@@ -24,6 +24,7 @@ else ()
 endif ()
 
 set(SRC_LIST
+	AuxRaw.h
 	main.cpp
 	Filesystem-pool.cpp Filesystem-pool.h
 	Lexical-cast-pool.cpp Lexical-cast-pool.h

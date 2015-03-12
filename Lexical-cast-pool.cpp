@@ -4,6 +4,7 @@
 
 #include <boost/lexical_cast.hpp>
 
+#include "AuxRaw.h"
 #include "Lexical-cast-pool.h"
 
 void

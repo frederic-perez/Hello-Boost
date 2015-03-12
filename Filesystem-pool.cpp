@@ -7,6 +7,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/system/config.hpp>
 
+#include "AuxRaw.h"
 #include "Filesystem-pool.h"
 
 void

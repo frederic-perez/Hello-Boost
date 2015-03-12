@@ -12,6 +12,7 @@
 
 #include <boost/foreach.hpp>
 
+#include "AuxRaw.h"
 #include "ParsingXML.h"
 
 #ifdef DATETRANSLATOR
