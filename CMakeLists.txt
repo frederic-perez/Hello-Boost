@@ -11,8 +11,8 @@ else()
 	set(Boost_USE_STATIC_LIBS OFF)
 endif()
 set(Boost_USE_MULTITHREADED ON)
-find_package(Boost) # <-- Use this simple line for using only headers
-# find_package(Boost COMPONENTS system filesystem)
+# find_package(Boost) # <-- Use this simple line for using only headers
+find_package(Boost COMPONENTS system filesystem)
 if (Boost_FOUND)
 	message(STATUS "Boost found:")
 	include_directories(${Boost_INCLUDE_DIRS})
@@ -25,6 +25,8 @@ endif ()
 
 set(SRC_LIST
 	main.cpp
+	Filesystem-pool.cpp Filesystem-pool.h
+	Lexical-cast-pool.cpp Lexical-cast-pool.h
 	ParsingXML.cpp ParsingXML.h
 )
 

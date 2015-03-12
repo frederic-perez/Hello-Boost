@@ -8,6 +8,9 @@
 // This demonstrates how to use Boost.PropertyTree
 // to read and write XML files.
 
+#include <locale>
+#include <string>
+
 #undef DATETRANSLATOR
 #ifdef DATETRANSLATOR
 #include <boost/date_time/gregorian/gregorian.hpp>
@@ -15,9 +18,6 @@
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-
-#include <locale>
-#include <string>
 
 #ifdef DATETRANSLATOR
 typedef boost::gregorian::date Date;
@@ -55,7 +55,8 @@ public:
 	 
 	DateTranslator() : locale_(isoDateLocale()) {}
 	 
-	boost::optional<external_type> get_value(internal_type const& v)
+	boost::optional<external_type>
+	get_value(internal_type const& v)
 	{
 		std::istringstream stream(v);
 		stream.imbue(locale_);
@@ -66,7 +67,8 @@ public:
 			return boost::none;
 	}
 	 
-	boost::optional<internal_type> put_value(external_type const& v)
+	boost::optional<internal_type>
+	put_value(external_type const& v)
 	{
 		std::ostringstream ans;
 		ans.imbue(locale_);
@@ -77,7 +79,7 @@ public:
 
 #endif
 
-int
+bool
 ParseXML(
 	const std::string& a_inputFilename,
 	const std::string& a_outputFilename);

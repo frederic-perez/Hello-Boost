@@ -59,7 +59,7 @@ write(Sked sked, std::ostream & os)
 	 
 	pt.add("sked.version", 3);
 	 
-	BOOST_FOREACH(Flight f, sked) {
+	for (Flight f : sked) {
 		ptree& node = pt.add("sked.flight", "");
 		node.put("carrier", f.carrier);
 		node.put("number", f.number);
@@ -70,25 +70,26 @@ write(Sked sked, std::ostream & os)
 	write_xml(os, pt);
 }
  
-int
+bool
 ParseXML(
 	const std::string& a_inputFilename,
 	const std::string& a_outputFilename)
 {
+	std::clog << __func__ << " started..." << std::endl;
 	try {
 		std::ifstream input(a_inputFilename);
 		Sked sked = read(input);
-		std::clog << "ParseXML: Read(" << a_inputFilename << ") finished"
+		std::clog << "  ParseXML: Read(\"" << a_inputFilename << "\") finished"
 			<< std::endl;
 		std::ofstream output(a_outputFilename);
 		write(sked, output);
-		std::clog << "ParseXML: Writing of " << a_outputFilename << " finished"
-			<< std::endl;
-		return EXIT_SUCCESS;
+		std::clog << "  ParseXML: Writing of \"" << a_outputFilename
+			<< "\" finished" << std::endl;
+	} catch (...) {
+		return false;
 	}
-	catch (...) {
-		return EXIT_FAILURE;
-	}
+	std::clog << __func__ << " finished." << std::endl;
+	return true;
 }
 
 // -- eof
