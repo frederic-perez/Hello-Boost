@@ -10,8 +10,6 @@
 
 #include <iostream>
 
-#include <boost/foreach.hpp>
-
 #include "aux-raw.h"
 #include "XML-parser.h"
 
@@ -41,7 +39,7 @@ read(std::istream& is)
 	 
 	// traverse pt
 	Sked ans;
-	BOOST_FOREACH(ptree::value_type const&v, pt.get_child("sked")) {
+	for (const ptree::value_type& v : pt.get_child("sked")) {
 		if (v.first == "flight") {
 			Flight f;
 			f.carrier = v.second.get<std::string>("carrier");
