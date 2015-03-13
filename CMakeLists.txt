@@ -29,7 +29,7 @@ set(SRC_LIST
 	main.cpp
 	filesystem-pool.cpp filesystem-pool.h
 	lexical-cast-pool.cpp lexical-cast-pool.h
-	ParsingXML.cpp ParsingXML.h
+	xml-parser.cpp xml-parser.h
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
