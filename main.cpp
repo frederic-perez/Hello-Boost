@@ -6,7 +6,7 @@
 #include "algorithm-string-pool.h"
 #include "filesystem-pool.h"
 #include "lexical-cast-pool.h"
-#include "ParsingXML.h"
+#include "xml-parser.h"
 
 int
 main(int /*argc*/, char* argv[])
