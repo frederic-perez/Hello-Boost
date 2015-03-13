@@ -7,8 +7,8 @@
 #include <boost/filesystem.hpp>
 #include <boost/system/config.hpp>
 
-#include "AuxRaw.h"
-#include "Filesystem-pool.h"
+#include "aux-raw.h"
+#include "filesystem-pool.h"
 
 void
 HelloBoost::ExamplesOfFileSystem(const std::string& a_filename)
