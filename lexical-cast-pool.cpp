@@ -4,8 +4,8 @@
 
 #include <boost/lexical_cast.hpp>
 
-#include "AuxRaw.h"
-#include "Lexical-cast-pool.h"
+#include "aux-raw.h"
+#include "lexical-cast-pool.h"
 
 void
 HelloBoost::ExamplesOfLexicalCast(const std::string& a_string)

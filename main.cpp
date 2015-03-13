@@ -4,8 +4,8 @@
 #include <string>
 
 #include "algorithm-string-pool.h"
-#include "Filesystem-pool.h"
-#include "Lexical-cast-pool.h"
+#include "filesystem-pool.h"
+#include "lexical-cast-pool.h"
 #include "ParsingXML.h"
 
 int

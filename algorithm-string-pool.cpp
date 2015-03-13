@@ -5,7 +5,7 @@
 
 #include <boost/algorithm/string.hpp>
 
-#include "AuxRaw.h"
+#include "aux-raw.h"
 #include "algorithm-string-pool.h"
 
 namespace {
