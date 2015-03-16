@@ -24,11 +24,7 @@ else ()
 endif ()
 
 set(SRC_LIST
-	aux-raw.h
-	algorithm-string-pool.cpp algorithm-string-pool.h
 	main.cpp
-	filesystem-pool.cpp filesystem-pool.h
-	lexical-cast-pool.cpp lexical-cast-pool.h
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
