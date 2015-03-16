@@ -6,7 +6,6 @@
 #include "algorithm-string-pool.h"
 #include "filesystem-pool.h"
 #include "lexical-cast-pool.h"
-#include "xml-parser.h"
 
 int
 main(int /*argc*/, char* argv[])
@@ -22,11 +21,6 @@ main(int /*argc*/, char* argv[])
 	ExamplesOfLexicalCast(inputValue);
 	
 	ExamplesOfAlgorithmsString();
-
-	const std::string filenameIn = "input.xml";
-	const std::string filenameOut = "output.xml";
-	const bool succeeded = ParseXML(filenameIn, filenameOut);
-	std::clog << "ParseXML " << (succeeded ? "succeeded" : "failed") << std::endl;
 
 	return EXIT_SUCCESS;
 }
