@@ -74,14 +74,16 @@ ExamplesOfAlgorithmsString()
 int
 main(int /*argc*/, char* /*argv*/[])
 {
-	std::cout << "Hello, Boost!" << std::endl;
-
+	std::cout << "Hello, Boost!\n" << std::endl;
 
 	const std::string inputValue = "1234567890";
 	ExamplesOfLexicalCast(inputValue);
+	std::cout << std::endl;
 	
 	ExamplesOfAlgorithmsString();
+	std::cout << std::endl;
 
+	std::cout << "Bye, Boost!" << std::endl;
 	return EXIT_SUCCESS;
 }
 
