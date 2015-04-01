@@ -41,9 +41,8 @@ ExamplesOfLexicalCast(const std::string& a_string)
 		const short valueShortL = lexical_cast<short>(a_string);
 		std::cout << pad << "lexical_cast<short>(\"" << a_string << "\") is "
 			<< valueShortL << std::endl;
-	}
-	catch (const boost::bad_lexical_cast& e) {
-		std::cerr << pad << "Exception caught: " << e.what() << "\n";
+	} catch (const boost::bad_lexical_cast& e) {
+		std::cerr << pad << "Exception caught: " << e.what() << '\n';
 	}
 
 	std::clog << "ExamplesOfLexicalCast(-) finished." << std::endl;
@@ -92,7 +91,7 @@ main(int /*argc*/, char* /*argv*/[])
 	const std::string inputValue = "1234567890";
 	ExamplesOfLexicalCast(inputValue);
 	std::cout << std::endl;
-	
+
 	ExamplesOfAlgorithmsString();
 	std::cout << std::endl;
 
