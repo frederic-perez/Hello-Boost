@@ -50,11 +50,11 @@ ExamplesOfLexicalCast(const std::string& a_string)
 
 namespace {
 
-	void
-		Output(const std::string& a_description, const std::string& a_value) {
-		const std::string pad = "  ";
-		std::cout << pad << a_description << ": \"" << a_value << "\"" << std::endl;
-	}
+void
+Output(const std::string& a_description, const std::string& a_value) {
+	const std::string pad = "  ";
+	std::cout << pad << a_description << ": \"" << a_value << "\"" << std::endl;
+}
 
 } // namespace
 
