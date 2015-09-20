@@ -2,7 +2,7 @@
 
 cmake_minimum_required(VERSION 2.8)
 
-project(Hello-Boost)
+project(Hello-Boost) # TODO: Split as in ABcb
 
 # Boost stuff
 if(WIN32)
