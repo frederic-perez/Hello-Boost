@@ -2,7 +2,9 @@
 
 cmake_minimum_required(VERSION 2.8)
 
-project(Hello-Boost) # TODO: Split as in ABcb
+set(PROJECT_NAME "Hello-Boost")
+set(PROJECT_TYPE "CXX")
+project(${PROJECT_NAME} ${PROJECT_TYPE})
 
 # Boost stuff
 if(WIN32)
