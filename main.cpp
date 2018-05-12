@@ -1,5 +1,3 @@
-// --
-
 #include <iostream>
 #include <string>
 
@@ -12,7 +10,7 @@ OutputBoostVersion(std::ostream& a_os)
 {
 	a_os
 		<< BOOST_VERSION / 100000 << "."  // major version
-		<< BOOST_VERSION / 100 % 1000 << "."  // minior version
+		<< BOOST_VERSION / 100 % 1000 << "."  // minor version
 		<< BOOST_VERSION % 100                // patch level
 		<< std::flush;
 }
@@ -98,5 +96,3 @@ main(int /*argc*/, char* /*argv*/[])
 	std::cout << "Bye, Boost!" << std::endl;
 	return EXIT_SUCCESS;
 }
-
-// -- eof
