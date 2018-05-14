@@ -5,15 +5,20 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/version.hpp>
 
-void
-OutputBoostVersion(std::ostream& a_os)
+namespace spy {
+
+std::string
+Boost_version()
 {
-	a_os
-		<< BOOST_VERSION / 100000 << "."  // major version
-		<< BOOST_VERSION / 100 % 1000 << "."  // minor version
-		<< BOOST_VERSION % 100                // patch level
-		<< std::flush;
+	return
+    std::to_string(BOOST_VERSION / 100000) // major version
+    + "."
+    + std::to_string(BOOST_VERSION / 100 % 1000) // minor version
+    + "."
+		+ std::to_string(BOOST_VERSION % 100); // patch level
 }
+
+} // namespace spy
 
 void
 ExamplesOfLexicalCast(const std::string& a_string)
@@ -82,9 +87,7 @@ ExamplesOfAlgorithmsString()
 int
 main(int /*argc*/, char* /*argv*/[])
 {
-	std::cout << "Hello, Boost (version ";
-	OutputBoostVersion(std::cout);
-	std::cout << ")!\n" << std::endl;
+	std::cout << "Hello, Boost (version " + spy::Boost_version() + ")!\n" << std::endl;
 
 	const std::string inputValue = "1234567890";
 	ExamplesOfLexicalCast(inputValue);
