@@ -10,12 +10,9 @@ namespace spy {
 std::string
 Boost_version()
 {
-  return
-    std::to_string(BOOST_VERSION / 100000) // major version
-    + "."
-    + std::to_string(BOOST_VERSION / 100 % 1000) // minor version
-    + "."
-    + std::to_string(BOOST_VERSION % 100); // patch level
+  return std::to_string(BOOST_VERSION / 100000) // major version
+    + "." + std::to_string(BOOST_VERSION / 100 % 1000) // minor version
+    + "." + std::to_string(BOOST_VERSION % 100); // patch level
 }
 
 } // namespace spy
@@ -25,25 +22,21 @@ ExamplesOfLexicalCast(const std::string& a_string)
 {
   std::clog << "ExamplesOfLexicalCast(-) started..." << std::endl;
 
-  using boost::lexical_cast;
   using boost::bad_lexical_cast;
+  using boost::lexical_cast;
 
   const std::string pad = "  ";
 
   const int valueIntS = stoi(a_string);
-  std::cout << pad << "stoi(\"" << a_string << "\") is "
-    << valueIntS << std::endl;
+  std::cout << pad << "stoi(\"" << a_string << "\") is " << valueIntS << std::endl;
   const int valueIntL = lexical_cast<int>(a_string);
-  std::cout << pad << "lexical_cast<int>(\"" << a_string << "\") is "
-    << valueIntL << std::endl;
+  std::cout << pad << "lexical_cast<int>(\"" << a_string << "\") is " << valueIntL << std::endl;
 
   const short valueShortS = static_cast<short>(stoi(a_string));
-  std::cout << pad << "stoi(\"" << a_string << "\") is "
-    << valueShortS << std::endl;
+  std::cout << pad << "stoi(\"" << a_string << "\") is " << valueShortS << std::endl;
   try {
     const short valueShortL = lexical_cast<short>(a_string);
-    std::cout << pad << "lexical_cast<short>(\"" << a_string << "\") is "
-      << valueShortL << std::endl;
+    std::cout << pad << "lexical_cast<short>(\"" << a_string << "\") is " << valueShortL << std::endl;
   } catch (const boost::bad_lexical_cast& e) {
     std::cerr << pad << "Exception caught: " << e.what() << '\n';
   }
@@ -54,7 +47,8 @@ ExamplesOfLexicalCast(const std::string& a_string)
 namespace {
 
 void
-Output(const std::string& a_description, const std::string& a_value) {
+Output(const std::string& a_description, const std::string& a_value)
+{
   const std::string pad = "  ";
   std::cout << pad << a_description << ": \"" << a_value << "\"" << std::endl;
 }
